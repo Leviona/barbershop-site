@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Amazing Amy's Barbershop</title>
+	<script type="text/javascript">
+	</script>
+	<style type="text/css">
+		.maindiv{
+			margin: 0px auto;
+			width: 80%;
+			display:flex;
+			position: inherit;
+			flex-direction: row;
+			flex-wrap: wrap;
+			align-items: flex-start;
+		}
+		.detail{
+			margin: 10px;
+			flex-grow: 5;
+			width: 400px;
+			background: rgb(0,0,0,0.09);
+			box-shadow: 2px 2px 10px rgb(0,0,0,0.5);
+			text-align: center;
+			border-radius:10px;
+			font-size:20px;
+			display: table-cell;
+			vertical-align: center;
+			transition: 0.53S;
+
+		}
+		.detail:hover{
+			transform: scale(1.05);
+			transition: 0.53S
+		}
+		img{
+			max-width: 460px;
+			border-radius: 20px;
+			margin: 10px;
+			overflow: hidden;
+			max-height: 350px;
+		}
+		body{
+			text-align: center;
+			background: rgb(30,30,0,0.03);
+			font-family: "arial"
+		}
+		.background{
+			width: 900px;
+			height: 100%;
+			background: white;
+			margin-left: auto;
+			margin-right: auto;
+			display: block;
+			position: absolute;
+			left: 0px;
+			top: 0px;
+			z-index: -100;
+		}
+	</style>
+</head>
+<body><!-- 
+<div class="background">
+</div>  -->
+	<h1>Amazing Amy's barbershop</h1>
+	<p>A fresh cut for you and your family</p>
+<br>
+<div>
+<div class="maindiv">
+	<!-- Barber's -->
+<div class="detail">
+	<p>Lawrence: Specializes in men's haircuts</p>
+	<img src="http://tse3.mm.bing.net/th?id=OIP.XhsPc5RhAbE7ueFCOTokaQHaE8&pid=Api">
+</div>
+<div class="detail">
+	<p>Dina: Specializes in babies' haircuts</p>
+	<img src="http://tse4.mm.bing.net/th?id=OIP.lBWP7bXAAQPLjkHQEqVz2gHaE9&pid=Api">
+</div>
+<div class="detail">
+	<p>Dora: Specializes in women's haircuts</p>
+	<img src="https://s3.amazonaws.com/wp-multisite-prd/wp-content/uploads/sites/2/2016/06/IMG_13801.jpg">
+</div>
+<div class="detail">
+	<p>Johnny: Specializes in pet's haircuts</p>
+	<img src="http://stories.barkpost.com/wp-content/uploads/2015/06/dog-barber.jpg">
+</div>
+</div>
+	<!-- Our Form -->
+	<div>
+	<h1>Make Your Appointment</h1>
+	<form method="POST" action="{% url 'appointment:home_page' %}">
+		{% csrf_token %}
+		<input placeholder="Type your times" type="text" name="time">
+		<input type="submit" name="">
+	</form>
+	</div>	
+	<h1>Here Is Your Appointment</h1>
+	<p>Appointment Time: {{time}}</p>
+
+</body>
+</html>
